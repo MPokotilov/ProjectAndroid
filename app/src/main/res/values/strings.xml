@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Office Hours Reservation System</string>
+    <string name="app_test">This is a test</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="i_forgot_my_password">I forgot my password</string>
+    <string name="log_in">Log in</string>
+    <string name="office_hours_list">Office Hours List</string>
+    <string name="teacher_s_panel">Teacher\'s Panel</string>
+    <string name="accept">Accept</string>
+    <string name="refuse">Refuse</string>
+    <string name="student_s_request">Student\'s Request</string>
+    <string name="title">Title:</string>
+    <string name="enter_title_here">Enter title here</string>
+    <string name="time">Time:</string>
+    <string name="enter_time_here">Enter time here</string>
+    <string name="message">Message:</string>
+    <string name="enter_message_here">Enter message here</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_office_hours">Add Office Hours</string>
+    <string name="remove_office_hours">Remove Office Hours</string>
+    <string name="request_panel">Request panel</string>
+
+</resources>

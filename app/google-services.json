@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "483201630493",
+    "project_id": "finalproject-72563",
+    "storage_bucket": "finalproject-72563.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483201630493:android:5ed96c39ca34ceabb2a1f4",
+        "android_client_info": {
+          "package_name": "com.example.officehoursreservationsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483201630493-beei3iggq8qeq22l1tl90ksge6i4kco0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGK7eKnxOx4oNXjUCrc5BvIKJJ0ymXWEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483201630493-beei3iggq8qeq22l1tl90ksge6i4kco0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

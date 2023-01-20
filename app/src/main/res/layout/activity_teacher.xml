@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mainPackage.view.TeacherActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/scrollViewTeacher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <ImageButton
+        android:id="@+id/image_button_4"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:src="@drawable/back_arrow" />
+
+    <TextView
+        android:id="@+id/teacherView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="55dp"
+        android:text="@string/teacher_s_panel"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewTeacher"
+        android:layout_width="409dp"
+        android:layout_height="500dp"
+        android:layout_marginBottom="116dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/teacherView2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/text_box"
+                android:gravity="center"
+                android:text="Hello"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+            <TextView
+                android:id="@+id/teacherView3"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/text_box"
+                android:gravity="center"
+                android:text="Hello"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+            <TextView
+                android:id="@+id/teacherView4"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/text_box"
+                android:gravity="center"
+                android:text="Hello"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/teacherView6"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/text_box"
+                android:gravity="center"
+                android:text="Hello"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/teacherView7"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/text_box"
+                android:gravity="center"
+                android:text="Hello"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/teacherView8"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/text_box"
+                android:gravity="center"
+                android:text="Hello"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+            <TextView
+                android:id="@+id/teacherView9"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/text_box"
+                android:gravity="center"
+                android:text="Hello"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+            <TextView
+                android:id="@+id/teacherView10"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/text_box"
+                android:gravity="center"
+                android:text="Hello"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/scrollViewTeacher"
+        android:layout_marginTop="50dp">
+
+        <Button
+            android:id="@+id/addOfficeHoursButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/accept"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/removeOfficeHoursButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/refuse"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

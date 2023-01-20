@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/image_button_teacher_creation"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/back_arrow"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:onClick="onBackButtonClick"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:text="Office Hours Creation"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="Time from - Time to:"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/title_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Example: 10:00 - 11:00"
+        android:inputType="text"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:required="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/apply_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:onClick="onApplyButtonClick"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:onClick="onCancelButtonClick"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</LinearLayout>

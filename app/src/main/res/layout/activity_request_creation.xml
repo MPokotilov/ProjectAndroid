@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/image_button_3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/back_arrow"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:onClick="onBackButtonClick"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:text="@string/student_s_request"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="@string/title"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/title_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_title_here"
+        android:inputType="text"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:required="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        android:textSize="16sp"
+        android:gravity="start" />
+
+    <EditText
+        android:id="@+id/time_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_time_here"
+        android:inputType="text"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:required="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/message"
+        android:textSize="16sp"
+        android:gravity="start" />
+
+    <EditText
+        android:id="@+id/message_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_message_here"
+        android:inputType="text"
+        android:minLines="3"
+        android:required="true"
+        android:gravity="start"
+        android:minHeight="150dp"
+         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/apply_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/apply"
+            android:onClick="onApplyButtonClick"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:onClick="onCancelButtonClick"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</LinearLayout>
