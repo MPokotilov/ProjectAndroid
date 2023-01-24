@@ -43,12 +43,12 @@ class User {
         var studentPattern = Pattern.compile(STUDENT_EMAIL_PATTERN)
         var matcher2 = studentPattern.matcher(email)
         if (matcher1.matches()){
-            isATeacher=true
+            this.isATeacher=true
             this.email=email
             return Checks.TEACHER
         }
         else if (matcher2.matches()){
-            isATeacher=false
+            this.isATeacher=false
             this.email=email
             return Checks.STUDENT
         }

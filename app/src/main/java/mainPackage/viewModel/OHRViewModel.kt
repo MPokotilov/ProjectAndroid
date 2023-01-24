@@ -8,36 +8,31 @@ import mainPackage.utils.utils1.passwordCheck
 import mainPackage.model.RepositoryMockup
 import mainPackage.utils.utils1
 
-class OHRViewModel (): ViewModel(){
+class OHRViewModel: ViewModel(){
 
     var currentUser = User()
     var currOfficeHoursInstanceID = "null"
     val repo = RepositoryMockup()
-//    private val userList = repository.getUserList()
 
-    fun login(email: String, password: String): Checks {
-        var currUser = User()
-        if (currUser.setEmail(email) == Checks.INCORRECT_EMAIL_FORM) return Checks.INCORRECT_EMAIL_FORM
-        else if (passwordCheck(password) == Checks.INCORRECT_PASSWORD_FORM) return Checks.INCORRECT_PASSWORD_FORM
-        currUser.password = password
-        var final: Checks= Checks.FAILED_CHECK
-        repo.userLogin(currUser) { result ->
-            when(result) {
+    fun login(email: String, password: String, callback: (Checks) -> Unit) {
+        currentUser.password = password
+        repo.userLogin(currentUser) { result ->
+            when (result) {
                 Checks.PASSED -> {
-                    final = result
+                    callback(result)
                 }
                 Checks.FAILED_CHECK -> {
-                    final = result
+                    callback(result)
                 }
                 Checks.NEW_USER_CREATED -> {
-                    final = result
+                    callback(result)
                 }
-                else -> {}
+                else -> {
+                }
             }
-
         }
-        return final
     }
+
 
     fun addOfficeHours(teachersEmail: String): Boolean{
         return repo.addOfficeHoursStud(currentUser.email, teachersEmail)
