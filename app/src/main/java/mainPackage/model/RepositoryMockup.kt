@@ -2,19 +2,19 @@ package mainPackage.model
 
 import com.google.firebase.firestore.FirebaseFirestore
 import android.util.Log
+import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.FirebaseFirestoreException
-import kotlinx.coroutines.suspendCancellableCoroutine
 import mainPackage.utils.Checks
 
 const val TAG = "FIRESTORE"
 
 class RepositoryMockup {
 
-    //--------------------------------
+        //--------------------------------
 
     //Firebase functions
 
-    fun writeNewUser(pass: String, email: String, isATeacher: Boolean?) {
+    fun writeNewUser(pass: String, email: String, isATeacher: Boolean?) : Task<Void> {
         val database = FirebaseFirestore.getInstance()
         val myRef = database.collection("Users").document(email)
 
@@ -27,6 +27,7 @@ class RepositoryMockup {
             .addOnSuccessListener { Log.d(TAG, "User successfully added") }
             .addOnFailureListener { e -> Log.w(TAG, "Error writing user", e) }
 
+        return myRef.set(newUser)
     }
 
     //CHECKED AND FIXED
@@ -57,8 +58,6 @@ class RepositoryMockup {
                 callback(Checks.FAILED_CHECK)
             }
     }
-
-
 
 
     //CHECKED AND FIXED
