@@ -10,14 +10,15 @@ import android.widget.ScrollView
 import androidx.lifecycle.ViewModelProvider
 import com.example.officehoursreservationsystem.R
 import mainPackage.model.OfficeHoursInstance
+import mainPackage.viewModel.CustomViewModelStoreOwner
 import mainPackage.viewModel.OHRViewModel
 
 class OfficeHoursListActivity : AppCompatActivity() {
-    private lateinit var viewModel: OHRViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_office_hours_list)
-        viewModel = ViewModelProvider(this).get(OHRViewModel::class.java)
+        val customViewModelStoreOwner = CustomViewModelStoreOwner()
+        val viewModel = ViewModelProvider(customViewModelStoreOwner).get(OHRViewModel::class.java)
 
         val secondButAct = findViewById<ImageButton>(R.id.image_button_2)
         secondButAct.setOnClickListener{
@@ -32,7 +33,7 @@ class OfficeHoursListActivity : AppCompatActivity() {
         }
 
         val addOfficeHoursButton = findViewById<Button>(R.id.addOfficeHoursButton)
-        if (viewModel.currentUser.isATeacher == false){
+        if (viewModel.currentUser.isATeacher == true){
             addOfficeHoursButton.setOnClickListener{
                 val Intent = Intent(this, CreateOfficeHoursActivity::class.java)
                 startActivity(Intent)
@@ -54,10 +55,10 @@ class OfficeHoursListActivity : AppCompatActivity() {
             for (item in myList) {
                 val button = Button(this)
                 button.text = "${item.email} ${item.timeFrom} ${item.timeTo}"
-                    button.setOnClickListener {
-                        val intent = Intent(this, RequestCreationActivity::class.java)
-                        intent.putExtra("ITEM_ID", item.code)
-                        startActivity(intent)
+                button.setOnClickListener {
+                    val intent = Intent(this, RequestCreationActivity::class.java)
+                    intent.putExtra("ITEM_ID", item.code)
+                    startActivity(intent)
                 }
                 myLinearLayout.addView(button)
             }

@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.officehoursreservationsystem.R
 import mainPackage.utils.Checks
 import mainPackage.utils.utils1
+import mainPackage.viewModel.CustomViewModelStoreOwner
 import mainPackage.viewModel.OHRViewModel
 
 class CreateOfficeHoursActivity : AppCompatActivity() {
@@ -46,7 +47,8 @@ class CreateOfficeHoursActivity : AppCompatActivity() {
     }
 
     fun onButtonClickAdd(view: View){
-        var viewModel = ViewModelProvider(this).get(OHRViewModel::class.java)
+        val customViewModelStoreOwner = CustomViewModelStoreOwner()
+        val viewModel = ViewModelProvider(customViewModelStoreOwner).get(OHRViewModel::class.java)
         val timeInput = findViewById<EditText>(R.id.title_input)
         val time = timeInput.text.toString().trim()
         if(time.isEmpty()){

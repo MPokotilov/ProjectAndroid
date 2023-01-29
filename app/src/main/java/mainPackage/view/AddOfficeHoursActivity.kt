@@ -15,6 +15,7 @@ import com.example.officehoursreservationsystem.R
 import com.google.firebase.firestore.auth.User
 import mainPackage.utils.Checks
 import mainPackage.utils.utils1
+import mainPackage.viewModel.CustomViewModelStoreOwner
 import mainPackage.viewModel.OHRViewModel
 
 class AddOfficeHoursActivity : AppCompatActivity() {
@@ -48,7 +49,8 @@ class AddOfficeHoursActivity : AppCompatActivity() {
     }
 
     fun onButtonClickAdd(view: View){
-        var viewModel = ViewModelProvider(this).get(OHRViewModel::class.java)
+        val customViewModelStoreOwner = CustomViewModelStoreOwner()
+        val viewModel = ViewModelProvider(customViewModelStoreOwner).get(OHRViewModel::class.java)
         val titleInput = findViewById<EditText>(R.id.title_input)
         val email = titleInput.text.toString().trim()
         var tempuser: mainPackage.model.User = mainPackage.model.User()

@@ -12,6 +12,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import com.example.officehoursreservationsystem.R
 import mainPackage.utils.utils1.timeFormCheck
+import mainPackage.viewModel.CustomViewModelStoreOwner
 import mainPackage.viewModel.OHRViewModel
 
 class RequestCreationActivity() : AppCompatActivity() {
@@ -20,7 +21,8 @@ class RequestCreationActivity() : AppCompatActivity() {
         setContentView(R.layout.activity_request_creation)
 
         val currCode = intent.getStringExtra("ITEM_ID")
-        var viewModel = ViewModelProvider(this).get(OHRViewModel::class.java)
+        val customViewModelStoreOwner = CustomViewModelStoreOwner()
+        val viewModel = ViewModelProvider(customViewModelStoreOwner).get(OHRViewModel::class.java)
         viewModel.currOfficeHoursInstanceID = currCode!!
 
         val returnButton = findViewById<ImageButton>(R.id.image_button_3)

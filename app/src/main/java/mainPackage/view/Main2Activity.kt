@@ -13,10 +13,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.officehoursreservationsystem.R
 import mainPackage.utils.Checks
 import mainPackage.utils.utils1
+import mainPackage.viewModel.CustomViewModelStoreOwner
 import mainPackage.viewModel.OHRViewModel
 
 class Main2Activity : AppCompatActivity() {
-    private lateinit var viewModel: OHRViewModel
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +29,8 @@ class Main2Activity : AppCompatActivity() {
         }
 
     fun onButtonClick(view: View) {
-        viewModel = ViewModelProvider(this).get(OHRViewModel::class.java)
+        val customViewModelStoreOwner = CustomViewModelStoreOwner()
+        val viewModel = ViewModelProvider(customViewModelStoreOwner).get(OHRViewModel::class.java)
 
         val emailEditText = findViewById<EditText>(R.id.et_email)
         val passwordEditText = findViewById<EditText>(R.id.et_password)
